@@ -1,0 +1,54 @@
+{
+  "name": "qp-redis",
+  "version": "1.0.0",
+  "description": "Plugin to share a common Redis connection across clustor.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standard",
+    "lint:fix": "standard --fix",
+    "redis": "docker run -p 6379:6379 --rm redis",
+    "test": "npm run unit && npm run typescript",
+    "typescript": "tsd",
+    "unit": "tap",
+    "unit:report": "tap --cov --coverage-report=html --coverage-report=cobertura",
+    "unit:verbose": "tap -Rspec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Narayana53/qp-redis"
+  },
+  "keywords": [
+    "fastify",
+    "redis",
+    "database",
+    "speed",
+    "cache",
+    "ioredis"
+  ],
+  "author": "Quantela",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Narayana53/qp-redis/issues"
+  },
+  "homepage": "https://github.com/Narayana53/qp-redis#readme",
+  "devDependencies": {
+    "@fastify/pre-commit": "^2.0.2",
+    "@types/node": "^18.0.0",
+    "fastify": "^4.0.0-rc.2",
+    "proxyquire": "^2.1.3",
+    "standard": "^17.0.0",
+    "tap": "^16.0.0",
+    "tsd": "^0.25.0"
+  },
+  "dependencies": {
+    "fastify-plugin": "4.0.0",
+    "ioredis": "5.0.0",
+    "aes256": "1.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "pre-commit": [
+    "lint"
+  ]
+}
